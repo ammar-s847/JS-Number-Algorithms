@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Multiples of 3 and 5</title>
+    </head>
+    <body>
+        <h1>Multiples of 3 and 5</h1>
+        <p>returns an array of multiples of 3 and 5 less than or equal to the length and returns the sum of the multiples</p>
+        <form name="InputForm">
+            <label for="Length"></label>
+            <input type="number" name="Length">
+        </form>
+        <button id="Submit" onclick="multiple()">Submit</button>
+        <p id="ArrayOutput"></p>
+        <p id="SumOutput"></p>
+        <script>
+            function multiple() {
+                var length = document.InputForm.Length.value;
+                var multiples = new Array();
+                for (var i = 1; i <= length; i++) {
+                    if (i % 3 == 0) {
+                        multiples[multiples.length] = i; // multiples.push(i);
+                    } else if (i % 5 == 0) {
+                        multiples[multiples.length] = i; // multiples.push(i);
+                    }
+                }
+                document.getElementById("ArrayOutput").innerHTML = multiples.join(", ");
+                var sum = 0;
+                for (var n = 0; n < multiples.length; n++) {
+                    sum += multiples[n];
+                }
+                document.getElementById("SumOutput").innerHTML = sum;
+            }
+        </script>
+    </body>
+</html>

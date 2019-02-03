@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>E Degree</title>
+    </head>
+    <body>
+        <h1>E to the nth Degree</h1>
+        <form name="InputForm">
+            <label for="Degree">Enter the Degree:</label>
+            <input type="number" name="Degree">
+        </form>
+        <button id="submit" onclick="eDegree()">Submit</button>
+        <br>
+        <p id="output"></p>
+        <script>
+            function eDegree() {
+                var degree = document.InputForm.Degree.value;
+                document.getElementById("output").innerHTML = Math.E ** degree;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Collatz Sequence</title>
+    </head>
+    <body>
+        <h1>Collatz Sequence</h1>
+        <form name="InputForm">
+            <label for="Start">Enter the starting number</label>
+            <input type="number" name="Start">
+        </form>
+        <button onclick="collatzSequence()">Submit</button>
+        <p id="output"></p>
+        <script type="text/javascript">
+            function collatzSequence() {
+                var input = document.InputForm.Start.value;
+                var output = new Array(input);
+                while (output.includes(1) == false) {
+                    if (input % 2 == 0) {
+                        output[output.length] = (input/2);
+                        input /= 2;
+                    } else if (input % 2 != 0) {
+                        output[output.length] = (3*input+1);
+                        input = 3*input+1;
+                    }
+                }
+                document.getElementById('output').innerHTML = output.join(", ") + ".";
+            }
+        </script>
+    </body>
+</html>
